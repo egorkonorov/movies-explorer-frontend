@@ -1,0 +1,19 @@
+
+.moviesCardList {
+    margin: 80px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-rows: repeat(2, minmax(360px, 1fr));
+    max-width: 1140px;
+    row-gap: 20px;
+    column-gap: 17px;
+    padding: 0 30px 0 30px
+
+}
+
+
+@media screen and (max-width:450px){
+    .moviesCardList{ 
+        padding: 0 18px 0 18px
+    }
+}
