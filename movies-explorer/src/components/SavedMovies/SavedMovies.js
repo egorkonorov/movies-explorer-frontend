@@ -34,10 +34,6 @@ function SavedMovies(){
 
             </MoviesCardList>
 
-            <Preloader>
-
-            </Preloader>
-
             <Footer>
                 
             </Footer>

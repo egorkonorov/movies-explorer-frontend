@@ -36,7 +36,7 @@ function Login(){
                         </input>
                         <button className="login__button" type="submit">Войти</button>
                         <p className="login__subtitle">Еще не зарегестрированы?&nbsp;
-                    <Link className="login__link" to="/sign-in">
+                    <Link className="login__link" to="/register">
                             Регистрация
                         </Link>
                     </p>

@@ -4,29 +4,36 @@
     position: relative;
 }
 
-.moviesCard__base{
-    display: flex;
-    flex-direction: row;
-    max-width: 360px;
-    justify-content: space-between;
-    align-items: center;
+.moviesCard__pic{
+    border-radius: 6px;
 }
+
+
+.moviesCard__base{
+    display: grid;
+    grid-template-columns: 80 20%;
+    grid-template-rows: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 .moviesCard__name{
     color: white;
     font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
     font-weight: 500;
-    cursor: pointer;
     font-size: 13px;
     line-height: 1.2;
     margin-left: 5px;
+    grid-row: 1/1;
+    grid-column: 1/1;
 }
 
 .moviesCard__duration{
     color: #8B8B8B;
     font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
     font-weight: 500;
-    cursor: pointer;
     font-size: 11px;
     line-height: 0.99;
     background-color: #424242; 
@@ -36,30 +43,54 @@
     text-align: center;
     margin: 0;
     padding-top: 6px;
-
+    align-self:right;
+    grid-row: 1/1;
+    grid-column: 2/2;
 }
 
-.moviesCard__delete-button{
+.moviesCard__save-button{
+    position: absolute;
+    right:10px;
+    top:10px;
+    border-radius: 10px;
+    border: 1px solid #313131;
+    background-color:#313131;
+    width: 72px;
+    height: 21px;
+    color: white;
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 2;
+    text-align: center;
+}
+
+.moviesCard__pic-unsaved{
+    position: absolute;
+    right:10px;
+    top:10px;
+    border-radius: 10px;
+    border: 1px solid #313131;
+    background-color:#313131;
+    width: 72px;
+    height: 21px;
+    cursor: pointer;
+    background:transparent url(./../../../images/tosave-ico.svg) no-repeat left;
+}
+
+.moviesCard__pic-unsaved:hover{
+    opacity: .8;
+}
+
+.moviesCard__pic-saved{
+    position: absolute;
+    right:10px;
+    top:10px;
+    border-radius: 10px;
+    border: 1px solid #313131;
+    background-color:#313131;
     width: 21px;
     height: 21px;
-    background-color: #313131;
-    border: 1px solid #313131;
-    border-radius: 50px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    transition: .3;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-}
-
-.moviesCard__delete-ico{
-    width: 8px;
-    height: 8px;
-}
-
-.moviesCard__delete-button:hover{
-    transform: scale(1.2);
+    background:transparent url(./../../../images/saved-ico.svg) no-repeat left;
 }

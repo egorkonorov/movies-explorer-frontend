@@ -16,9 +16,28 @@
     }
 }
 
+.navigation__menu-button{
+    border: none;
+    background-color: rgba(32, 32, 32, 1);
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    bottom:0;
+    height: 100%;
+}
 
-
-.navigation__overlay{
+.navigation__close-button{
+    border: none;
+    background-color: rgba(32, 32, 32, 1);
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    bottom:0;
+    right:22px;
+    top:22px;
+    height: 100%;
+}
+.navigation__overlay_hidden{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -26,10 +45,22 @@
     opacity: 0;
     visibility: hidden;
     z-index: 2;
+    transition: .3;
+}
+
+.navigation__overlay_visible{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    visibility: visible;
+    z-index: 2;
+    transition: .3;
 }
 
 
-.navigation__menu{
+.navigation__menu_hidden{
     position: fixed;
     right: 0;
     bottom:0;
@@ -39,18 +70,42 @@
     visibility: hidden;
     z-index: 2;
     transition: 0.3s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.navigation__menu_visible{
+    position: fixed;
+    right: 0;
+    bottom:0;
+    height: 100%;
+    width:520px;
+    background-color: rgba(32, 32, 32, 1);
+    visibility: visible;
+    z-index: 2;
+    transition: 0.3s;
     opacity: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
+
 @media screen and (max-width:750px){
-    .navigation__menu{ 
+    .navigation__menu_visible{ 
         width:100%;
     }
 }
 
-
+@media screen and (max-width:750px){
+    .navigation__menu_hidden{ 
+        width:100%;
+    }
+}
 
 @media screen and (max-width:1200px){
     .navigation__menu-ico{ 
@@ -69,7 +124,7 @@
     text-decoration: none;
     z-index: 3;
     max-width: 100px;
-    margin-top: 444px;
+    margin-bottom: 50px;
 }
 
 .navigation__account-ico{
@@ -139,7 +194,12 @@
     opacity: .5;
 }
 
-.navigation__close-button{
+.navigation__closeButton_hidden{
+
+    visibility: hidden;
+}
+
+.navigation__closeButton_visible{
     width: 44px;
     height: 44px;
     position: fixed;
@@ -148,9 +208,10 @@
     transition: .3;
     z-index: 5;
     cursor: pointer;
-    visibility: hidden;
+    visibility: visible
 }
 
-.navigation__close-button:hover{
+
+.navigation__closeButton_visible:hover{
     transform: scale(1.2);
 }
