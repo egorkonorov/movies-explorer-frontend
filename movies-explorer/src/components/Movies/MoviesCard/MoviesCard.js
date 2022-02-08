@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function MoviesCard({card_src, card_alt, card_name, card_duration, card_savedClass, card__savedPic}){
+function MoviesCard({card_src, card_alt, card_name, card_duration, card_savedClass}){
 
     return (
         <>

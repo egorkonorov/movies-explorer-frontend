@@ -3,8 +3,6 @@ import MoviesCard from "./../MoviesCard/MoviesCard"
 import pic1 from "./../../../images/pic1.jpg"
 import pic2 from "./../../../images/pic2.jpg"
 import pic3 from "./../../../images/pic3.jpg"
-import savedPic from "./../../../images/saved-ico.svg"
-import unSavedPic from "./../../../images/tosave-ico.svg"
 
 function MoviesCardList(){
 
@@ -17,7 +15,6 @@ function MoviesCardList(){
                     card_name={"33 слова о дизайне"}
                     card_duration={"1ч 17м"}
                     card_savedClass={'moviesCard__pic-unsaved'}
-                    card__savedPic={unSavedPic}
                 >
             
                 </MoviesCard>
@@ -27,7 +24,6 @@ function MoviesCardList(){
                     card_name={"Киноальманах «100 лет дизайна»"}
                     card_duration={"1ч 17м"}
                     card_savedClass={'moviesCard__pic-saved'}
-                    card__savedPic={savedPic}
                 >
             
                 </MoviesCard>
@@ -37,7 +33,6 @@ function MoviesCardList(){
                     card_name={"В погоне за Бенкси"}
                     card_duration={"1ч 17м"}
                     card_savedClass={'moviesCard__pic-unsaved'}
-                    card__savedPic={unSavedPic}
                 >
             
                 </MoviesCard>
