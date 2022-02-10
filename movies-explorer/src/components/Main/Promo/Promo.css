@@ -27,6 +27,13 @@
     }
 }
 
+@media screen and (max-width:250px){
+    .promo__logo{ 
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
 .promo__text{
     grid-column: 1/1;
     grid-row: 1/1;
@@ -43,5 +50,11 @@
 @media screen and (max-width:450px){
     .promo__text{ 
         font-size: 31px;
+    }
+}
+
+@media screen and (max-width:250px){
+    .promo__text{ 
+        font-size: 22px;
     }
 }

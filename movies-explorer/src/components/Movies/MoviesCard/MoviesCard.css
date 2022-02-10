@@ -6,7 +6,21 @@
 
 .moviesCard__pic{
     border-radius: 6px;
+    height:360px;
+    object-fit: cover;
 }
+
+@media screen and (max-width:380px){
+    .moviesCard__pic{ 
+        height:300px;
+    }
+  }
+
+  @media screen and (max-width:335px){
+    .moviesCard__pic{ 
+        height:280px;
+    }
+  }
 
 
 .moviesCard__base{

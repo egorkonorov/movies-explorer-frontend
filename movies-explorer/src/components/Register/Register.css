@@ -8,7 +8,7 @@
 
 @media screen and (max-width:450px){
     .register{ 
-        max-width: 320px;
+        max-width: 260px;
         align-items: center;
     }
   }
@@ -117,7 +117,7 @@
 
 @media screen and (max-width:450px){
     .register__button{ 
-        width: 260px;
+        width: 280px;
     }
   }
 

@@ -15,11 +15,11 @@ function Portfolio(){
                             <img src={arrow} alt="Стрелка" className="portfolio__arrow"></img>
                         </div>
                         <div className="portfolio__website">
-                            <a href="https://egorkonorov.github.io/russian-travel/" target="_blank" rel="noreferrer" className="portfolio__title">Адаптивный сайт</a>
+                            <a href="https://github.com/egorkonorov/russian-travel" target="_blank" rel="noreferrer" className="portfolio__title">Адаптивный сайт</a>
                             <img src={arrow} alt="Стрелка" className="portfolio__arrow"></img>
                         </div>
                         <div className="portfolio__website-bottom">
-                            <a href="http://frontend.konorov.nomoredomains.rocks/" target="_blank" rel="noreferrer" className="portfolio__title">Одностраничное приложение</a>
+                            <a href="https://github.com/egorkonorov/react-mesto-api-full" target="_blank" rel="noreferrer" className="portfolio__title">Одностраничное приложение</a>
                             <img src={arrow} alt="Стрелка" className="portfolio__arrow"></img>
                         </div>
                     </div>

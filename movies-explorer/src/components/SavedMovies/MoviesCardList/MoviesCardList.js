@@ -11,24 +11,24 @@ function MoviesCardList(){
             <div className="moviesCardList">
                 <MoviesCard 
                     card_src={pic1}
-                    card_alt={"33 слова о дизайне"}
-                    card_name={"33 слова о дизайне"}
+                    card_alt={"Карты, деньги, два ствола"}
+                    card_name={"Карты, деньги, два ствола"}
                     card_duration={"1ч 17м"}
                 >
             
                 </MoviesCard>
                 <MoviesCard 
                     card_src={pic2}
-                    card_alt={"Киноальманах «100 лет дизайна»"}
-                    card_name={"Киноальманах «100 лет дизайна»"}
+                    card_alt={"Большой куш"}
+                    card_name={"Большой куш"}
                     card_duration={"1ч 17м"}
                 >
             
                 </MoviesCard>
                 <MoviesCard 
                     card_src={pic3}
-                    card_alt={"В погоне за Бенкси"}
-                    card_name={"В погоне за Бенкси"}
+                    card_alt={"Грязь"}
+                    card_name={"Грязь"}
                     card_duration={"1ч 17м"}
                 >
             

@@ -20,7 +20,7 @@
     border: none;
     background-color: rgba(32, 32, 32, 1);
     visibility: hidden;
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom:0;
     height: 100%;

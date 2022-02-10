@@ -3,7 +3,7 @@ import Header from "./../Header/Header";
 import { Link, withRouter} from 'react-router-dom';
 import headerLogo from "./../../images/logo.svg";
 import profileIco from "./../../images/profile-ico.svg";
-
+import Navigation from "./../Navigation/Navigation"
 function Profile(){
 
     return (
@@ -12,13 +12,14 @@ function Profile(){
                 <Header>
                     <Link  to="/" className="header__link"><img src={headerLogo} alt="Логотип" className="header__logo"></img></Link>
                     <div className="header__films-base">
-                        <div className="header__films">Фильмы</div>
-                        <div className="header__saved-films">Сохраненные фильмы</div>
+                        <Link  to="/movies"  className="header__films">Фильмы</Link>
+                        <Link  to="/saved-movies" className="header__saved-films">Сохраненные фильмы</Link>
                     </div>
                     <Link to="/profile" className="header__account-base">
                         <img className="header__account-ico" src={profileIco} alt="Иконка профиля"></img>
                         <p className="header__account-button" to="/profile">Аккаунт</p>
                     </Link>
+                    <Navigation></Navigation>
                 </Header>
                 <div className="profile">
                     <p className="profile__heading">Привет, Виталий!</p>

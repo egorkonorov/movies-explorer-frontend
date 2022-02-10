@@ -36,6 +36,12 @@
     width:410px;
 }
 
+@media screen and (max-width:450px){
+    .profile__inputs-base{ 
+        width:260px;
+    }
+  }
+
 .profile__input-base{
     display: flex;
     flex-direction: row;
@@ -78,6 +84,11 @@
     margin: 16px 0 16px 0;
 }
 
+@media screen and (max-width:450px){
+    .profile__inputs-line{ 
+        width:260px;
+    }
+  }
 .profile__buttons{
     display: flex;
     flex-direction: column;

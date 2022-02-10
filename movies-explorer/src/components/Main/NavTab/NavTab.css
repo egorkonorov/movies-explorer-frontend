@@ -21,6 +21,12 @@
     }
 }
 
+@media screen and (max-width:250px){
+    .navTab__tabs{ 
+        max-width: 200px;
+    }
+}
+
 
 .navtab__link{
     color:white;
