@@ -65,7 +65,7 @@
     }
   }
 
-.login__button{
+.login__button_active{
     background-color: rgba(66, 133, 244, 1);
     text-align: center;
     font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
@@ -80,6 +80,23 @@
     margin-top: 179px;
     transition: .5s;
     cursor: pointer;
+}
+
+.login__button_inactive{
+    background-color: rgba(47, 47, 47, 1);
+    text-align: center;
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.12;
+    color: white;
+    width: 396px;
+    height: 45px;
+    border-radius: 3px;
+    border:1px solid rgba(47, 47, 47, 1);
+    margin-top: 179px;
+    transition: .5s;
+    cursor: not-allowed;
 }
 
 @media screen and (max-width:450px){
@@ -118,4 +135,38 @@
 
 .login__link:hover{
     opacity: .8;
+}
+
+.login-email__span_inactive{
+    visibility: hidden;
+    color: rgba(238, 52, 101, 1);
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.12;
+}
+
+.login-email__span_active{
+    color: rgba(238, 52, 101, 1);
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.12;
+}
+
+.login-password__span_inactive{
+    visibility: hidden;
+    color: rgba(238, 52, 101, 1);
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.12;
+}
+
+.login-password__span_active{
+    color: rgba(238, 52, 101, 1);
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.12;
 }

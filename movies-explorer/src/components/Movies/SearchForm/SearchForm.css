@@ -90,14 +90,11 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.12;
-    width: 1070px;
     margin-left: 20px;
     transition: all .5s;
+    width: 95%;
 }
-.searchForm__input:focus{
-  box-shadow: 1px 1px 2px 0 rgba(255,255,255,.3);
-  border-radius: 10px;
-}
+
 
 
 
@@ -105,8 +102,13 @@
     width: 34px;
     height: 34px;
     margin-right: 5px;
+    margin-left: 5px;
     cursor: pointer;
+    border: none;
+    
     transition: transform 0.5s;
+    background: url(./../../../images/find-ico.png);
+    background-size: cover;
 }
 
 .searchForm__button-pic:hover{
@@ -127,5 +129,23 @@
   .searchForm__line{ 
     padding: 0 18px 0 18px;
     margin:0
+  }
+}
+
+@media screen and (max-width:900px){
+  .searchForm__input{ 
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .searchForm__input{ 
+    width: 85%;
+  }
+}
+
+@media screen and (max-width:360px){
+  .searchForm__input{ 
+    width: 80%;
   }
 }

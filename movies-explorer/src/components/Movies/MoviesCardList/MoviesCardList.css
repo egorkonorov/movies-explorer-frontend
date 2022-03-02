@@ -6,9 +6,35 @@
     max-width: 1140px;
     row-gap: 65px;
     column-gap: 30px;
-    padding: 0 30px 0 30px
-
+    padding: 0 30px 0 30px;
 }
+
+.moviesCardList__emptyParagraph_enabled{
+    margin:0 auto;
+    color: white;
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.moviesCardList__emptyParagraph_disabled{
+    display: none;
+}
+
+.moviesCardList__responseError_enabled{
+    margin:0 auto;
+    color: white;
+    font-family:"Inter", 'Arial', 'Helvetica', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.moviesCardList__responseError_disabled{
+    display: none;
+}
+
 
 @media screen and (max-width:450px){
     .moviesCardList{ 

@@ -1,12 +1,16 @@
 import React from "react";
 
 
-function Preloader(){
+function Preloader({emptyPreloaderClass, editpreloaderNumber}){
 
+    function handlePreloaderClick(e){
+        editpreloaderNumber()
+        
+    }  
     return (
         <>
-            <div className="preloader">
-                <button className="preloader__button">Еще</button>
+            <div className={emptyPreloaderClass}>
+                <button className="preloader__button" onClick={handlePreloaderClick}>Еще</button>
             </div>
         </>
     

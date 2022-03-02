@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Switch } from 'react-router-dom';
+import React, {useState} from "react";
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Main from "./../Main/Main";
 import Movies from "./../Movies/Movies";
 import SavedMovies from "./../SavedMovies/SavedMovies";
@@ -7,8 +7,25 @@ import Profile from "./../Profile/Profile";
 import Register from "./../Register/Register";
 import Login from "./../Login/Login";
 import Error404 from "./../Errors/Error404/Error404";
+import * as Auth from './../../utils/Auth';
 
 function App() {
+  const [registrationPassed, setRegistrationPassed] = useState(false)
+  const history = useHistory()
+
+  function handleRegister (password, email) {
+    Auth.register(password, email)
+        .then((res) => {
+                setRegistrationPassed(true)
+                history.push('/sign-in')
+
+        })
+        .catch((err) => {
+          console.log(err)
+          setRegistrationPassed(false)
+      })
+  }
+
  
   return (
     <>
@@ -38,7 +55,7 @@ function App() {
       </Route >
 
       <Route path="/register">
-        <Register>
+        <Register handleRegister={handleRegister}>
           
         </Register>
       </Route >

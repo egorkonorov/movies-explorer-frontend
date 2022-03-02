@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Header from "./../Header/Header";
 import SearchForm from "./../Movies/SearchForm/SearchForm";
 import MoviesCardList from "./../Movies/MoviesCardList/MoviesCardList";
@@ -8,7 +8,66 @@ import Footer from "./../Footer/Footer";
 import { Link, withRouter} from 'react-router-dom';
 import headerLogo from "./../../images/logo.svg";
 import profileIco from "./../../images/profile-ico.svg";
+import moviesapi from "./../../utils/MoviesApi";
+
 function Movies(){
+
+
+const [movies, setMovies] = useState([]);
+const [preloaderNumber, setpreloaderNumber] = useState(0);
+const [preloaderIncrease, setpreloaderIncrease] = useState(0);
+const [isEmpty, setIsEmpty] = useState(false);
+const [isEqual, setIsEqual] = useState(false);
+const [responseError, setResponseError] = useState('moviesCardList__responseError_disabled');
+const [isOverfilled, setisOverfilled] = useState([]);
+const [emptyCardsClass, setEmptyCardsClass] = useState('moviesCardList__emptyParagraph_disabled')
+const [emptyPreloaderClass, setEmptyPreloaderClass] = useState('preloader_disabled')
+
+useEffect(() => {
+    if (window.innerWidth < 480) {
+        setpreloaderNumber(5)
+        setpreloaderIncrease(2)
+    } else if(window.innerWidth < 768){
+        setpreloaderNumber(8)
+        setpreloaderIncrease(2)
+    } else {
+        setpreloaderNumber(12)
+        setpreloaderIncrease(3)
+    }
+}, [movies]);
+
+
+useEffect(() => {
+    setIsEqual(preloaderNumber===movies.length || preloaderNumber > movies.length )
+}, [preloaderNumber, movies]);
+
+useEffect(() => {
+    setIsEmpty(movies.length === 0)
+    setisOverfilled(movies.length > 9)
+    setEmptyCardsClass(`${isEmpty ? 'moviesCardList__emptyParagraph_enabled': 'moviesCardList__emptyParagraph_disabled'}`)
+    setEmptyPreloaderClass(`${isEmpty  || !isOverfilled || isEqual ? 'preloader_disabled': 'preloader'}`)
+ }, [movies, isEmpty, isOverfilled, isEqual]);
+
+
+function handleSearch (searchedMovie){
+        setpreloaderNumber(9)
+        moviesapi
+          .getMovies()
+          .then((res) => {
+            const array = res.filter((film) => film.nameRU.toLowerCase().includes(searchedMovie.toLowerCase()))
+            setMovies(array)
+          })
+          .catch((err) => {
+            console.log(err);
+            setResponseError('moviesCardList__responseError_enabled')
+          });
+          
+}
+
+function editpreloaderNumber (){
+    setpreloaderNumber(preloaderNumber + preloaderIncrease)
+}
+
 
     return (
         <>
@@ -26,15 +85,20 @@ function Movies(){
                 <Navigation></Navigation>
             </Header>
 
-            <SearchForm>
+            <SearchForm handleSearch={handleSearch}>
 
             </SearchForm>
 
-            <MoviesCardList>
+            <MoviesCardList
+                movies={movies}
+                emptyCardsClass={emptyCardsClass}
+                preloaderNumber={preloaderNumber}
+                responseError={responseError}
+               >
 
             </MoviesCardList>
 
-            <Preloader>
+            <Preloader emptyPreloaderClass={emptyPreloaderClass} editpreloaderNumber={editpreloaderNumber}>
 
             </Preloader>
 

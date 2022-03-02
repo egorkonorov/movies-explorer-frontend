@@ -1,41 +1,26 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import MoviesCard from "./../MoviesCard/MoviesCard"
-import pic1 from "./../../../images/pic1.jpg"
-import pic2 from "./../../../images/pic2.jpg"
-import pic3 from "./../../../images/pic3.jpg"
 
-function MoviesCardList(){
+
+function MoviesCardList({movies, emptyCardsClass, preloaderNumber, responseError}){
+
 
     return (
         <>
             <div className="moviesCardList">
-                <MoviesCard 
-                    card_src={pic1}
-                    card_alt={"Карты, деньги, два ствола"}
-                    card_name={"Карты, деньги, два ствола"}
-                    card_duration={"1ч 17м"}
-                    card_savedClass={'moviesCard__pic-unsaved'}
-                >
-            
-                </MoviesCard>
-                <MoviesCard 
-                    card_src={pic2}
-                    card_alt={"Большой куш"}
-                    card_name={"Большой куш"}
-                    card_duration={"1ч 17м"}
-                    card_savedClass={'moviesCard__pic-saved'}
-                >
-            
-                </MoviesCard>
-                <MoviesCard 
-                    card_src={pic3}
-                    card_alt={"Грязь"}
-                    card_name={"Грязь"}
-                    card_duration={"1ч 17м"}
-                    card_savedClass={'moviesCard__pic-unsaved'}
-                >
-            
-                </MoviesCard>
+            <p className={emptyCardsClass}>Ничего не найдено</p>
+            <p className={responseError}>Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p> 
+            {movies.slice(0, preloaderNumber).map((movie) => {
+          return (
+            <MoviesCard
+            card_src={` https://api.nomoreparties.co/${movie.image.url}`}
+            card_alt={movie.nameRU}
+            card_name={movie.nameRU}
+            card_duration={movie.duration}
+            card_savedClass={"moviesCard__pic-unsaved"}
+            />
+          );
+        })}
             </div>
 
         </>

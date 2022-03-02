@@ -5,9 +5,12 @@
     height: 166px;
     margin-bottom: 79px;
     margin-top: 100px;
+    transition: .3s;
 }
 
-
+.preloader_disabled{
+    display: none;
+}
 
 .preloader__button{
     width: 320px;
